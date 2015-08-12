@@ -1,0 +1,50 @@
+<div id="Search" style="float: right">
+  <%= form_tag @students_path, :method => 'get' do %>
+      <p>
+        <%= text_field_tag :search, params[:search] %>
+        <%= submit_tag "Search", :name => nil %>
+      </p>
+  <% end %>
+<div id="container">
+    <div id="Students" class="table-responsive">
+      </div>
+        <table class="table-bordered">
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Sex</th>
+            <th>Address Line 1</th>
+            <th>Address Line 2</th>
+            <th>Town</th>
+            <th>County</th>
+            <th>Post Code</th>
+            <th>Number</th>
+            <th>Course</th>
+            <th>Tutor</th>
+          </tr>
+
+          <% @students.each do |students| %>
+              <tr>
+                <td><%= students.FirstName %></td>
+                <td><%= students.LastName %></td>
+                <td><%= students.Sex %></td>
+                <td><%= students.Address1 %></td>
+                <td><%= students.Address2 %></td>
+                <td><%= students.Town %></td>
+                <td><%= students.County %></td>
+                <td><%= students.PostCode %></td>
+                <td><%= students.MainNumber %></td>
+                <td><%= students.Course %></td>
+                <td><%= students.Tutor %></td>
+                <td><%= link_to 'Edit', edit_student_path(students), class: 'btn btn-info btn-xs' %></td>
+                <td><%= link_to 'Remove', student_path(students),
+                               method: :delete,
+                               data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs' %></td>
+              </tr>
+          <% end %>
+        </table>
+      <%= will_paginate @students %> </br>
+      <%= link_to 'Add Student', new_student_path, class: "btn btn-default btn-primary btn-xs"%>
+    </div>
+</div>
+

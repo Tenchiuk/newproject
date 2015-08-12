@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>StudentLookup</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class="container">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header" style="padding-bottom: 15px; padding-top: 15px">
+          <%= link_to(image_tag("logo.jpg"), root_path) %>
+        </div>
+            <p class="navbar-text pull-right" style="float: right">
+              <% if user_signed_in? %>
+                  Logged in as <strong><%= current_user.email %></strong>.
+                  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+                  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+              <% else %>
+                  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+                  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+              <% end %>
+            </p>
+      </div>
+      <ul class="nav nav-pills" style="padding-bottom: 15px; padding-left: 15px;">
+        <li role="presentation"><%= link_to 'Home', controller: '/welcome' %></li>
+        <li role="presentation"><%= link_to 'Student Lookup', controller: '/students' %></li>
+        <li role="presentation"><%= link_to 'Contact Us', controller: '/contact' %></li>
+      </ul>
+    </nav>
+</div>
+
+<div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <h1>School Student Lookup</h1>
+        <p>Lorem ipsum dolor sit amet, prima iudico deterruisset vix ut. Soluta mediocritatem te has, his brute delenit cu. Cum nullam facilisi ne. Ex eum persius suscipiantur consequuntur, mel putent legimus denique ei. Pro alterum facilis denique eu, eu partem everti sea. Id mel ornatus offendit, sea debitis maiorum ad.
+
+          Eripuit interpretaris pro cu, ex pericula reformidans mel. Eos postulant honestatis comprehensam in, nec et dicant nominavi, in elitr adversarium est. Omnis ornatus concludaturque sea ne, ea agam nemore per, ad cum dicant saperet nonumes. Partem alterum ea has. Ei reque diceret nam, nisl nibh vix at. Nec at ceteros vivendum concludaturque, at movet perfecto mei.
+
+          Vivendo volumus tibique ei sea,</p>
+      </div>
+      <div class="col-md-9">
+        <% if notice %>
+            <p class="alert alert-success"><%= notice %></p>
+        <% end %>
+        <% if alert %>
+            <p class="alert alert-danger"><%= alert %></p>
+        <% end %>
+        <%= yield %>
+      </div>
+    </div>
+</div>
+
+
+</body>
+</html>

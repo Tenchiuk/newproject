@@ -1,0 +1,57 @@
+<p>
+  <strong>First Name:</strong>
+  <%= @students.FirstName %>
+</p>
+
+<p>
+  <strong>Last Name:</strong>
+  <%= @students.LastName %>
+</p>
+
+<p>
+  <strong>Sex:</strong>
+  <%= @students.Sex %>
+</p>
+
+<p>
+  <strong>Address Line 1:</strong>
+  <%= @students.Address1 %>
+</p>
+
+<p>
+  <strong>Address Line 2:</strong>
+  <%= @students.Address2 %>
+</p>
+
+<p>
+  <strong>Town:</strong>
+  <%= @students.Town %>
+</p>
+
+<p>
+  <strong>County:</strong>
+  <%= @students.County %>
+</p>
+
+<p>
+  <strong>Post Code:</strong>
+  <%= @students.PostCode %>
+</p>
+
+<p>
+  <strong>Main Number:</strong>
+  <%= @students.MainNumber %>
+</p>
+
+<p>
+  <strong>Course:</strong>
+  <%= @students.Course %>
+</p>
+
+<p>
+  <strong>Tutor:</strong>
+  <%= @students.Tutor %>
+</p>
+
+<%= link_to 'Edit', edit_student_path(@students), class: 'btn btn-success' %>
+<%= link_to 'Back', students_path, class: 'btn btn-success' %>

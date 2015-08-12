@@ -1,0 +1,98 @@
+<%= form_for @students do |f| %>
+
+    <% if @students.errors.any? %>
+        <div id="error_explanation">
+          <h2>
+            <%= pluralize(@students.errors.count, "error") %> prohibited
+            this student from being saved:
+          </h2>
+          <ul>
+            <% @students.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <form role="form">
+
+      <div class="form-group">
+        <%= f.label :First_Name %>
+        <div class="col-md-8">
+          <%= f.text_field :FirstName, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :Last_Name %>
+        <div class="col-md-8">
+          <%= f.text_field :LastName, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :Sex %>
+        <div class="col-md-8">
+          <%= f.text_field :Sex, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :Address_Line_1 %>
+        <div class="col-md-8">
+          <%= f.text_field :Address1, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :Address_Line_2 %>
+        <div class="col-md-8">
+          <%= f.text_field :Address2, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :Town %>
+        <div class="col-md-8">
+          <%= f.text_field :Town, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :County %>
+        <div class="col-md-8">
+          <%= f.text_field :County, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :Post_Code %>
+        <div class="col-md-8">
+          <%= f.text_field :PostCode, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :Main_Phone_Number %>
+        <div class="col-md-8">
+          <%= f.text_field :MainNumber, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :Course %>
+        <div class="col-md-8">
+          <%= f.text_field :Course, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :Tutor %>
+        <div class="col-md-8">
+          <%= f.text_field :Tutor, class: "form-control" %>
+        </div>
+      </div>
+
+      <%= f.submit "Submit", class: "btn btn-default btn-primary" %>
+    </form>
+<% end %>
