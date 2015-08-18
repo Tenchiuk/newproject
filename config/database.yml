@@ -48,11 +48,11 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  database: heroku_860ecda1e743fdf
-  username: b464a12d32c4b5
-  password: e1b57f871b3d105
-  url: mysql://b464a12d32c4b5:3615c0e8@us-cdbr-iron-east-02.cleardb.net/heroku_860ecda1e743fdf?reconnect=true
-  adapter: mysql2
+  database: heroku_58b3cba0f261d4e
+  username: bb63f9addb1460
+  password: bcdede42
+  url: mysql://bb63f9addb1460:bcdede42@us-cdbr-iron-east-02.cleardb.net/heroku_58b3cba0f261d4e?reconnect=true
+  adapter: mysql
   encoding: utf8
   pool: 5
   socket: /tmp/mysql.sock
