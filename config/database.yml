@@ -48,7 +48,11 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  database: student_lookup_production
-  username: student_lookup
-  password: <%= ENV['STUDENT_LOOKUP_DATABASE_PASSWORD'] %>
+  database: heroku_860ecda1e743fdf
+  username: b464a12d32c4b5
+  password: e1b57f871b3d105
+  url: mysql://b464a12d32c4b5:3615c0e8@us-cdbr-iron-east-02.cleardb.net/heroku_860ecda1e743fdf?reconnect=true
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  socket: /tmp/mysql.sock
