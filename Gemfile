@@ -33,6 +33,8 @@ gem 'autoprefixer-rails'
 
 gem 'passenger'
 
+gem 'mysql'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
