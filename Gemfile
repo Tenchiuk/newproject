@@ -33,10 +33,6 @@ gem 'autoprefixer-rails'
 
 gem 'passenger'
 
-gem 'aws-sdk'
-
-gem 'chef'
-
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
